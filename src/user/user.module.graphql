@@ -1,0 +1,36 @@
+type User {
+  id: ID!
+  name: String!
+  age: Int!
+  email: String
+  bills: [Bill!]
+}
+
+# noinspection GraphQLTypeRedefinition
+type Query {
+  user(id: ID!): User!
+  users: [User!]!
+}
+
+# MUTATIONS
+
+input CUser {
+  id: ID!
+  name: String!
+  age: Int!
+  email: String
+  bills: [CBill!]
+}
+
+input UUser {
+  id: ID!
+  name: String
+  age: Int
+  email: String
+}
+
+# noinspection GraphQLTypeRedefinition
+type Mutation {
+  createUser(cUser: CUser!): User!
+  updateUser(uUser: UUser!): User!
+}

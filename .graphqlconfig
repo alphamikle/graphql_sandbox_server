@@ -1,0 +1,16 @@
+{
+  "includes": [
+    "./**/*.graphql"
+  ],
+  "extensions": {
+    "endpoints": {
+      "Playground": {
+        "url": "http://localhost:3000/graphql",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}
